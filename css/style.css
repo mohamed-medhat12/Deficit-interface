@@ -1,0 +1,428 @@
+.fa-calculator,
+.fa-bullseye,
+.fa-arrow-trend-up {
+    font-size: 100PX;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 5%;
+    background-color: #12284c;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #12284c;
+}
+
+li {
+    float: left;
+    text-align: center;
+}
+
+li a {
+    display: block;
+    color: white;
+
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #60e464;
+}
+
+i {
+    margin-right: 2px;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.horizontal {
+    border-width: 2px;
+    border-color: #12284c;
+    color: #12284c;
+    border-style: solid;
+}
+
+
+.carousel-caption {
+    bottom: 220px;
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.carousel-title {
+    margin-bottom: 10px;
+}
+
+th {
+    background-color: #336699;
+    color: white;
+    padding: 15px 10px;
+}
+
+#currentGPA,
+#totalHours {
+    padding: 1px 2px;
+    margin-top: 0px;
+    height: 22px;
+    width: 90px;
+    border: 2px solid;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+}
+
+#Credit {
+    padding: 1px 2px;
+    height: 22px;
+    width: 90px;
+    border: 2px solid;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+
+}
+
+select {
+    width: 150px;
+    border: none;
+    height: 25px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    font-size: 18px;
+}
+
+table {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+.current {
+    color: #223a7a;
+}
+
+.cen {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tb {
+    margin-bottom: 20px;
+}
+
+#btn-calculate-gpa,
+#reset-data {
+    color: black;
+    padding: 5px 20px;
+    margin-top: 25px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: white;
+    text-align: center;
+}
+
+.ulist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.list {
+    float: left;
+}
+
+.list,
+.alink {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.list .alink:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.td-goal-GPA {
+    padding-left: 20px;
+}
+
+.th-goal-GPA {
+    padding: 20px 90px 20px 30px;
+    margin-right: 10px;
+}
+
+.table-goal-GPA {
+    text-align: left;
+}
+
+.goal-GPA {
+    margin-left: 10px;
+    width: 95px;
+}
+
+.ggg {
+    margin-top: 19px;
+    margin-bottom: 15px;
+}
+
+.list-group-item {
+    text-align: left;
+}
+
+.accordian {
+    margin: 5px auto;
+    background-color: white;
+
+}
+
+.li-button {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+.accordian .li-button {
+    list-style: none;
+    width: 90%;
+    /* margin: 20px; */
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #acc8e6;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+.accordian .li-button label {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.label-content::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordian .table-content {
+    color: #555;
+    padding: 0px 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordian input[type="radio"]:checked+label+.table-content {
+    max-height: 750px;
+    padding: 10px 10px 20px;
+}
+
+.accordian input[type="radio"]:checked+label::before {
+    content: '-';
+}
+
+.tes {
+    background-color: #acc8e6;
+}
+
+.tab {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tab,
+.tes {
+    border: 1px solid black;
+    text-align: center;
+    background-color: #acc8e6;
+    color: black;
+}
+
+.card {
+    margin-bottom: 5px;
+}
+
+.tdeficit {
+    text-align: left;
+    font-size: medium;
+}
+
+
+
+@media (max-width: 768px) {
+    .card {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .carousel-caption {
+        bottom: 100px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+
+    .carousel-caption p {
+        width: 60%;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .carousel-title {
+        margin-bottom: 2px;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .card {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .carousel-caption {
+        bottom: 100px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+
+    .carousel-caption p {
+        width: 60%;
+        margin: auto;
+        font-size: 18px;
+        line-height: 1.9;
+    }
+
+    .carousel-title {
+        margin-bottom: 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .carousel-caption {
+        bottom: 20px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 2px;
+    }
+
+    .carousel-caption p {
+        width: 60%;
+        margin: auto;
+        font-size: 12px;
+        line-height: 1.9;
+    }
+
+    .carousel-title {
+        margin-bottom: 2px;
+    }
+
+}
+
+#btn-calculate-gpa {
+    margin-bottom: 10px;
+}
+
+.m-goal {
+    margin-top: 40px;
+}
+
+.tdeficit {
+    text-align: left;
+    font-size: medium;
+}
+
+/* @media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .print-container,
+    .print-container * {
+        visibility: visible;
+        page-break-before: auto;
+    }
+
+    .print-container {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+    }
+} */

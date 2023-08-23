@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/Bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/test.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <title>GPA (GRADE POINT AVERAGE) CALCULATOR</title>
+</head>
+
+<body id="body">
+
+
+
+    <section class="carousel-title">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/New folder/login.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption">
+                        <h5>GPA (grade point average) calculator</h5>
+                        <p>A tool that helps you calculate your GPA</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-xl-8">
+            <section id="image_print"></section>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <!-- card menu link -->
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-xl-3 col-lg-3 col-sm-7">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <br>
+                    <i class="fa-solid fa-calculator" style="color: #223a7a;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Predict your GPA_calculator</h5>
+                        <p class="card-text">Estimate the GPA you will likely earn for this semester and overall.</p>
+                        <br>
+                        <br>
+                        <a href="#GPA-calculator" class="btn btn-primary">Jump to calculator</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-xl-3 col-lg-3 col-sm-7">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <br>
+                    <i class="fa-solid fa-bullseye" style="color: #223a7a;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Set your goal GPA</h5>
+                        <p class="card-text">Want to improve your GPA? Know what you need to boost your GPA.</p>
+                        <br>
+                        <br>
+                        <a href="#goal-GPA-calculator" class="btn btn-primary">Jump to calculator</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-11 col-xl-3 col-lg-3 col-sm-7">
+                <div class="card" style="width: 18rem; height: 21rem;">
+                    <br>
+                    <i class="fa-solid fa-arrow-trend-up" style="color: #223a7a;"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Grade point Deficit (GPD) calculator</h5>
+                        <p class="card-text">Grade Point Defecit is the number of grade points below the requires 2.0
+                            minimum GPA.</p>
+                        <a href="#GPD-calculator" class="btn btn-primary">Jump to calculator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="horizontal">
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+                <section>
+                    <h2 class="current" id="GPA-calculator">Predict your GPA calculator</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">Enter your current cumulative GPA and total credit hours (taken for
+                            GPA).
+                        </li>
+                        <li class="list-group-item">Enter the credit hours for each course you are currently taking.
+                        </li>
+                        <li class="list-group-item">If you are repeating a course, tick the Course Repeat
+                            checkbox and select the previous grade you received.</li>
+                        <li class="list-group-item">Select the expected grades for each of your courses and press
+                            Calculate.</li>
+                    </ol>
+                </section>
+            </div>
+
+        </div>
+        <br>
+
+
+        <form>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-8">
+                    <section>
+                        <table class="tb">
+                            <thead>
+                                <th>
+                                    <label for="currentGPA">Current cumulative GPA</label>
+                                </th>
+                                <th>
+                                    <label for="totalHours">Total Credit Hours (taken for GPA)</label>
+                                </th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><input type="number" id="currentGPA" name="currentGPA" min="0" max="4"
+                                            step="0.01" value="0"></td>
+                                    <td><input type="number" id="totalHours" name="totalHours" min="0" max="999.0"
+                                            step="0.5" value="0"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+                <div class="col-md-8 col-xl-8">
+                    <section>
+                        <h2 class="current">Current Class Grades</h2>
+
+                        <table>
+                            <thead>
+                                <th><label for="course">Course</label></th>
+                                <th><label for="creditHours">Credit Hours</label></th>
+                                <th><label for="grade">Expected Grade</label></th>
+                                <th><label for="repeat">Course Repeat</label></th>
+                                <th><label for="expected">Previous Grade</label></th>
+                            </thead>
+                            <tbody>
+
+
+                                <tr>
+                                    <th><label for="course1">course 1:</label></th>
+                                    <td><input type="number" id="Credit1" name="Credit1" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade" name="expgrade" onchange="populate(this.id,'expgrade')">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade" name="grade" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th><label for="course2">course 2:</label></th>
+                                    <td><input type="number" id="Credit2" name="Credit2" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade2" name="expgrade2">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check2" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade2" name="grade2" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th><label for="course3">course 3:</label></th>
+                                    <td><input type="number" id="Credit3" name="Credit3" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade3" name="expgrade3">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check3" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade3" name="grade3" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th><label for="course4">course 4:</label></th>
+                                    <td><input type="number" id="Credit4" name="Credit4" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade4" name="expgrade4">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check4" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade4" name="grade4" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th><label for="course5">course 5:</label></th>
+                                    <td><input type="number" id="Credit5" name="Credit5" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade5" name="expgrade5">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check5" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade5" name="grade5" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="course6">course 6:</label></th>
+                                    <td><input type="number" id="Credit6" name="Credit6" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade6" name="expgrade6">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check6" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade6" name="grade6" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="course7">course 7:</label></th>
+                                    <td><input type="number" id="Credit7" name="Credit7" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade7" name="expgrade7">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check7" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade7" name="grade7" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="course8">course 8:</label></th>
+                                    <td><input type="number" id="Credit8" name="Credit8" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade8" name="expgrade8">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check8" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade8" name="grade8" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="course8">course 9:</label></th>
+                                    <td><input type="number" id="Credit9" name="Credit9" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade9" name="expgrade9">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check9" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade9" name="grade9" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><label for="course10">course 10:</label></th>
+                                    <td><input type="number" id="Credit10" name="Credit10" min="0" max="14" step="0.5"
+                                            value="0"></td>
+                                    <td>
+                                        <select id="expgrade10" name="expgrade10">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="checkbox" id="check10" onclick="enaple()">
+                                    </td>
+
+                                    <td>
+                                        <select id="grade10" name="grade10" disabled="true">
+                                            <option value="4.00">A+</option>
+                                            <option value="4.00">A</option>
+                                            <option value="3.7">A-</option>
+                                            <option value="3.3">B+</option>
+                                            <option value="3.0">B</option>
+                                            <option value="2.7">B-</option>
+                                            <option value="2.3">C+</option>
+                                            <option value="2.0">C</option>
+                                            <option value="1.7">C-</option>
+                                            <option value="1.3">D+</option>
+                                            <option value="1.0">D</option>
+                                            <option value="0.0">F</option>
+                                        </select>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <input type="button" value="Calculate" id="btn-calculate-gpa" onclick="calculate()">
+                        <input type="reset" value="Reset" id="reset-data" onclick="delete_result()">
+                        <label id="error"></label>
+
+                    </section>
+                </div>
+
+                <div class="col-md-8 col-xl-8">
+                    <section class="answer">
+                        <h2 class="current"></h2>
+                    </section>
+                    <section>
+                        <table id="myTable">
+                            <thead class="thead1">
+                            </thead>
+
+                            <tbody class="tbodyel">
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </form>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+                <section>
+                    <h2 class="current m-goal">Calculate your goal GPA</h2>
+                    <p>To calculate your goal GPA, you will need to follow these steps:</p>
+                    <ol class="list-group list-group-numbered" id="test-list">
+                        <li class="list-group-item">Enter the GPA you currently have.</li>
+                        <li class="list-group-item ">Enter the number of credit hours you have already completed.</li>
+                        <li class="list-group-item ">Enter the GPA you would like to achieve.</li>
+                        <li class="list-group-item ">Enter the number of credit hours you plan to take in the upcoming
+                            semester(s).</li>
+                        <li class="list-group-item ">Hit the Calculate button</li>
+                    </ol>
+
+                    <br>
+                </section>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+                <form action="">
+                    <h2 class="current" id="goal-GPA-calculator"> Goal GPA Calculator</h2>
+                    <table class="table-goal-GPA">
+                        <tbody>
+                            <tr>
+                                <th class="th-goal-GPA">Current cumulative GPA</th>
+                                <td><input class="goal-GPA" type="number" id="currentGPA-goal-GPA" name="currentGPA"
+                                        min="0" max="4" step="0.01" value="0"></td>
+                            </tr>
+
+                            <tr>
+                                <th class="th-goal-GPA">Total Credit Hours (taken for GPA)</th>
+                                <td><input class="goal-GPA" type="number" id="completed_Credit_Hours" name="totalHours"
+                                        min="0" max="999" step="0.5" value="0"></td>
+                            </tr>
+
+                            <tr>
+                                <th class="th-goal-GPA">Goal Overall GPA</th>
+                                <td><input class="goal-GPA" type="number" id="target_GPA" name="target_GPA" min="0"
+                                        max="4" step="0.01" value="2"></td>
+                            </tr>
+
+                            <tr>
+                                <th class="th-goal-GPA">Credit Hours this Semester</th>
+                                <td><input class="goal-GPA" type="number" id="planned_Credit_Hours" name="totalHours"
+                                        min="0" max="999" step="0.5" value="0"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" value="Calculate" id="btn-calculate-gpa" onclick="targeGPA()">
+                    <input type="reset" value="Reset" id="reset-data" onclick="delete_target_GPA()">
+                    <label id="error"></label>
+                </form>
+                <p class="target_GPA_result" id="goal-result"></p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+                <section>
+                    <h2 class="current">Calculate a quality point defcit</h2>
+                    <p>To get into good academic standing, students must clear any grade point deficit to reach a 2.0
+                        GPA.</p>
+                    <p>To calculate your grade deficit GPA, you will need to follow these steps:</p>
+                    <ol class="list-group list-group-numbered" id="test-list">
+                        <li class="list-group-item">Enter your current cumulative GPA .</li>
+                        <li class="list-group-item ">Enter the number of credit hours you have already completed.</li>
+                        <li class="list-group-item ">Hit the Calculate button</li>
+                    </ol>
+
+                    <br>
+                </section>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+                <form>
+                    <h2 class="current" id="GPD-calculator"> Grade Point Deficit Calculator</h2>
+                    <table class="table-goal-GPA">
+                        <tbody>
+                            <tr>
+                                <th class="th-goal-GPA">Current cumulative GPA</th>
+                                <td><input class="goal-GPA" type="number" id="currentGPA-deficit" name="currentGPA"
+                                        min="0" max="4" step="0.01" value="0"></td>
+                            </tr>
+
+                            <tr>
+                                <th class="th-goal-GPA">Total Credit Hours (taken for GPA)</th>
+                                <td><input class="goal-GPA" type="number" id="completed_Credit_Hours_deficit"
+                                        name="totalHours" min="0" max="999" step="0.5" value="0"></td>
+                            </tr>
+
+                            <tr>
+                                <th class="th-goal-GPA">Credit Hours for this semester</th>
+                                <td><input class="goal-GPA" type="number" id="Credit_Hours_deficit_this_semester"
+                                        name="CreditHoursSemester" min="0" max="999" step="0.5" value="0"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="col-md-8 col-xl-12">
+                        <section>
+                            <h2 class="current">Current Class Grades</h2>
+
+                            <table>
+                                <thead>
+                                    <th><label for="course">Course</label></th>
+                                    <th><label for="creditHours">Credit Hours</label></th>
+                                    <th><label for="grade_deficit">Previous Grade</label></th>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr>
+                                        <th><label for="course_deficit1">course 1:</label></th>
+                                        <td><input type="number" id="course_deficit1" name="course_deficit1" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit" name="grade_deficit">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th><label for="course_deficit2">course 2:</label></th>
+                                        <td><input type="number" id="course_deficit2" name="course_deficit2" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit2" name="grade_deficit2">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th><label for="course_deficit3">course 3:</label></th>
+                                        <td><input type="number" id="course_deficit3" name="course_deficit3" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit3" name="grade_deficit3">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <th><label for="course_deficit4">course 4:</label></th>
+                                        <td><input type="number" id="course_deficit4" name="course_deficit4" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit4" name="grade_deficit4">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+
+                                    </tr>
+
+
+                                    <tr>
+                                        <th><label for="course_deficit5">course 5:</label></th>
+                                        <td><input type="number" id="course_deficit5" name="course_deficit5" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit5" name="grade_deficit5">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th><label for="course_deficit6">course 6:</label></th>
+                                        <td><input type="number" id="course_deficit6" name="course_deficit6" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit6" name="grade_deficit6">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th><label for="course_deficit7">course 7:</label></th>
+                                        <td><input type="number" id="course_deficit7" name="course_deficit7" min="0"
+                                                max="14" step="0.5" value="0"></td>
+                                        <td>
+                                            <select id="grade_deficit7" name="grade_deficit7">
+                                                <option value="1.0">D</option>
+                                                <option value="0.0">F</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                    <input type="button" value="Calculate" id="btn-calculate-gpa" onclick="deficit_result()">
+                    <input type="reset" value="Reset" id="reset-data" onclick="delete_deficit_result()">
+                    <label id="error"></label>
+                </form>
+                <p id="error_deficit"></p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-xl-8">
+                    <p class="deficit_GPA_result"></p>
+                    <!-- first option -->
+                    <span id="check_1_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-1-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit"></thead>
+                            <tbody class="tbody-deficit"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <p class="deficit_GPA_final_result"></p>
+                <!-- second option -->
+                <div class="col-md-8 col-xl-8">
+                    <span id="check_2_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-2-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit_2option"></thead>
+                            <tbody class="tbody-deficit_2option"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- Third option -->
+
+                <div class="col-md-8 col-xl-8">
+                    <span id="check_3_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-3-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit_3option"></thead>
+                            <tbody class="tbody-deficit_3option"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- Fourth option -->
+                <div class="col-md-8 col-xl-8">
+                    <span id="check_4_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-4-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit_4option"></thead>
+                            <tbody class="tbody-deficit_4option"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- Fifth  option -->
+                <div class="col-md-8 col-xl-8">
+                    <span id="check_5_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-5-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit_5option"></thead>
+                            <tbody class="tbody-deficit_5option"></tbody>
+                        </table>
+                    </section>
+                </div>
+                <!-- Sixth option  -->
+                <div class="col-md-8 col-xl-8">
+                    <span id="check_6_deficit" class="check_deficit"></span>
+                    <section class="print-container" id="print-6-table">
+                        <table class="table table-bordered tdeficit">
+                            <thead class="thead-deficit_6option"></thead>
+                            <tbody class="tbody-deficit_6option"></tbody>
+                        </table>
+                    </section>
+                </div>
+
+                <div class="col-md-8 col-xl-8">
+                    <span class="print_button"></span>
+
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-xl-8">
+                        <p>*These tools are designed to assist our GU students calculate their GPA. Please note that
+                            these tools are
+                            not tied to
+                            the University’s Student Information System and the results are not official and based only
+                            on the data
+                            input on this
+                            page.*</p>
+                    </div>
+                </div>
+
+            </div>
+
+</body>
+<script src="js/code.js"></script>
+
+</html>
