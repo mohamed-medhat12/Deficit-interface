@@ -1161,12 +1161,20 @@ function delete_deficit_result() {
 }
 
 function printPage() {
-            checked = $("input[type=checkbox]:checked").length;
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var isChecked = false;
 
-            if (!checked) {
-                alert("You must check at least one option.");
-                return false;
-            }else{
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            isChecked = true;
+            break;
+        }
+    }
+
+    if (!isChecked) {
+        alert("Please check at least one checkbox.");
+        return false; // Prevent form submission
+    } else{
                 var check = [document.getElementById("check_1"),
                 document.getElementById("check_2"),
                 document.getElementById("check_3"),
